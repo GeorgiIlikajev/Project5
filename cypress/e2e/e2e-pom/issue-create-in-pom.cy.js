@@ -1,5 +1,5 @@
 /**
- * This is an example file and approach for POM in Cypress
+ * This is an example file and approach for POM in Cypresss
  */
 import IssueModal from "../../pages/IssueModal";
 
