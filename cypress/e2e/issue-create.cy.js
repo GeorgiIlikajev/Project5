@@ -138,7 +138,7 @@ describe('Issue create', () => {
         .should('have.length', '5')
         .first()
         .find('p')
-      
+
       //Checking if created task is visible on board
       cy.contains(randomTitle).should('be.visible');
       
