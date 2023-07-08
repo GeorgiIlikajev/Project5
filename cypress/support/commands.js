@@ -5,3 +5,4 @@ Cypress.Commands.add('debounced', { prevSubject: true }, (input, action, value) 
     cy.wrap(input)[action](value);
     cy.tick(1000);
 });
+import 'cypress-wait-until';
