@@ -32,14 +32,14 @@ describe('Issue comments creating, editing and deleting', () => {
         const comment_edited = 'TEST_COMMENT_EDITED';
 
         getIssueDetailsModal().within(() => {
-            //add comment
+            //Create comment
             cy.contains('Add a comment...').click();
             cy.get('textarea[placeholder="Add a comment..."]').type(comment);
             cy.contains('button', 'Save').click().should('not.exist');
             cy.contains('Add a comment...').should('exist');
             cy.get('[data-testid="issue-comment"]').should('contain', comment);
 
-            //edit comment
+            //Edit comment
             cy.get('[data-testid="issue-comment"]').first().contains('Edit')
                 .click().should('not.exist');
             cy.get('textarea[placeholder="Add a comment..."]')
@@ -48,7 +48,7 @@ describe('Issue comments creating, editing and deleting', () => {
             cy.get('[data-testid="issue-comment"]').should('contain', 'Edit')
                 .and('contain', comment_edited);
 
-            //delete comment
+            //Delete comment
             cy.contains('Delete').click();
         });
 
