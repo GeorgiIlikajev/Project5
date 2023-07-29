@@ -9,25 +9,7 @@ describe('Issue comments creating, editing and deleting', () => {
 
     const getIssueDetailsModal = () => cy.get('[data-testid="modal:issue-details"]');
 
-    it('Should create a comment successfully', () => {
-        const comment = 'TEST_COMMENT';
-
-        getIssueDetailsModal().within(() => {
-            cy.contains('Add a comment...')
-                .click();
-
-            cy.get('textarea[placeholder="Add a comment..."]').type(comment);
-
-            cy.contains('button', 'Save')
-                .click()
-                .should('not.exist');
-
-            cy.contains('Add a comment...').should('exist');
-            cy.get('[data-testid="issue-comment"]').should('contain', comment);
-        });
-    });
-
-    it.only('Should create,edit and delete comment successfully', () => {
+    it('Should create,edit and delete comment successfully', () => {
         const comment = 'TEST_COMMENT';
         const comment_edited = 'TEST_COMMENT_EDITED';
 
